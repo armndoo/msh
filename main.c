@@ -3,16 +3,36 @@
 #include <string.h>
 #include <stdbool.h>
 #include <strings.h>
+#include <stdlib.h>
 
 // Function that clears the terminal screen via an Escape Sequence.
 void cls() {
   printf("\e[1;1H\e[2J");
 }
 
+
+char* tokenize_PATH() { 
+  char PATH[] = "PATH";
+  char *PATH_env = strdup(getenv(PATH));
+  char *PATH_tok = strtok(PATH_env, ":");
+
+  while(PATH_tok != NULL) {
+    printf("%s \n", PATH_tok);
+    PATH_tok = strtok(NULL, ":");
+  }
+  free(PATH_env);
+  return PATH_tok;
+} 
+
+
 int main(int argc, char *argv[]) {
 
-  bool found = false;
+  char *PATH_tokenized = tokenize_PATH();
+  printf("%s", PATH_tokenized);
+  
+/*  bool found = false;
   char *builtins[] = {"echo", "type", "exit", NULL};
+  
   setbuf(stdout, NULL);
   char user_input[1024];
 
@@ -42,5 +62,6 @@ int main(int argc, char *argv[]) {
         if(!found) printf("%s: command not found\n", user_input + 5);
       }  
     }while(strcmp(user_input, "exit"));
+    */
   return 0;    
 }
