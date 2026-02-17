@@ -26,11 +26,8 @@ char* tokenize_PATH() {
 
 
 int main(int argc, char *argv[]) {
-
-  char *PATH_tokenized = tokenize_PATH();
-  printf("%s", PATH_tokenized);
-  
-/*  bool found = false;
+ 
+  bool found = false;
   char *builtins[] = {"echo", "type", "exit", NULL};
   
   setbuf(stdout, NULL);
@@ -62,6 +59,5 @@ int main(int argc, char *argv[]) {
         if(!found) printf("%s: command not found\n", user_input + 5);
       }  
     }while(strcmp(user_input, "exit"));
-    */
-  return 0;    
+      return 0;    
 }
