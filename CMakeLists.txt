@@ -3,6 +3,7 @@ project(msh)
 
 set(CMAKE_C_STANDARD 99)
 
+
 add_executable(msh
     src/main.c 
     src/parser.c 
