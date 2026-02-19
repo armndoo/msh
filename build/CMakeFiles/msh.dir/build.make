@@ -86,10 +86,38 @@ CMakeFiles/msh.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/msh.dir/src/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/armndo/Projects/C/msh/src/main.c -o CMakeFiles/msh.dir/src/main.c.s
 
+CMakeFiles/msh.dir/src/parser.c.o: CMakeFiles/msh.dir/flags.make
+CMakeFiles/msh.dir/src/parser.c.o: /home/armndo/Projects/C/msh/src/parser.c
+CMakeFiles/msh.dir/src/parser.c.o: CMakeFiles/msh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/armndo/Projects/C/msh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/msh.dir/src/parser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/msh.dir/src/parser.c.o -MF CMakeFiles/msh.dir/src/parser.c.o.d -o CMakeFiles/msh.dir/src/parser.c.o -c /home/armndo/Projects/C/msh/src/parser.c
+
+CMakeFiles/msh.dir/src/parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/msh.dir/src/parser.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/armndo/Projects/C/msh/src/parser.c > CMakeFiles/msh.dir/src/parser.c.i
+
+CMakeFiles/msh.dir/src/parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/msh.dir/src/parser.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/armndo/Projects/C/msh/src/parser.c -o CMakeFiles/msh.dir/src/parser.c.s
+
+CMakeFiles/msh.dir/src/builtins.c.o: CMakeFiles/msh.dir/flags.make
+CMakeFiles/msh.dir/src/builtins.c.o: /home/armndo/Projects/C/msh/src/builtins.c
+CMakeFiles/msh.dir/src/builtins.c.o: CMakeFiles/msh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/armndo/Projects/C/msh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/msh.dir/src/builtins.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/msh.dir/src/builtins.c.o -MF CMakeFiles/msh.dir/src/builtins.c.o.d -o CMakeFiles/msh.dir/src/builtins.c.o -c /home/armndo/Projects/C/msh/src/builtins.c
+
+CMakeFiles/msh.dir/src/builtins.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/msh.dir/src/builtins.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/armndo/Projects/C/msh/src/builtins.c > CMakeFiles/msh.dir/src/builtins.c.i
+
+CMakeFiles/msh.dir/src/builtins.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/msh.dir/src/builtins.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/armndo/Projects/C/msh/src/builtins.c -o CMakeFiles/msh.dir/src/builtins.c.s
+
 CMakeFiles/msh.dir/src/path_utils.c.o: CMakeFiles/msh.dir/flags.make
 CMakeFiles/msh.dir/src/path_utils.c.o: /home/armndo/Projects/C/msh/src/path_utils.c
 CMakeFiles/msh.dir/src/path_utils.c.o: CMakeFiles/msh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/armndo/Projects/C/msh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/msh.dir/src/path_utils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/armndo/Projects/C/msh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/msh.dir/src/path_utils.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/msh.dir/src/path_utils.c.o -MF CMakeFiles/msh.dir/src/path_utils.c.o.d -o CMakeFiles/msh.dir/src/path_utils.c.o -c /home/armndo/Projects/C/msh/src/path_utils.c
 
 CMakeFiles/msh.dir/src/path_utils.c.i: cmake_force
@@ -103,17 +131,21 @@ CMakeFiles/msh.dir/src/path_utils.c.s: cmake_force
 # Object files for target msh
 msh_OBJECTS = \
 "CMakeFiles/msh.dir/src/main.c.o" \
+"CMakeFiles/msh.dir/src/parser.c.o" \
+"CMakeFiles/msh.dir/src/builtins.c.o" \
 "CMakeFiles/msh.dir/src/path_utils.c.o"
 
 # External object files for target msh
 msh_EXTERNAL_OBJECTS =
 
 msh: CMakeFiles/msh.dir/src/main.c.o
+msh: CMakeFiles/msh.dir/src/parser.c.o
+msh: CMakeFiles/msh.dir/src/builtins.c.o
 msh: CMakeFiles/msh.dir/src/path_utils.c.o
 msh: CMakeFiles/msh.dir/build.make
 msh: CMakeFiles/msh.dir/compiler_depend.ts
 msh: CMakeFiles/msh.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/armndo/Projects/C/msh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable msh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/armndo/Projects/C/msh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable msh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/msh.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

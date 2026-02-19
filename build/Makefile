@@ -129,6 +129,30 @@ msh/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/msh.dir/build.make CMakeFiles/msh.dir/build
 .PHONY : msh/fast
 
+src/builtins.o: src/builtins.c.o
+.PHONY : src/builtins.o
+
+# target to build an object file
+src/builtins.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/msh.dir/build.make CMakeFiles/msh.dir/src/builtins.c.o
+.PHONY : src/builtins.c.o
+
+src/builtins.i: src/builtins.c.i
+.PHONY : src/builtins.i
+
+# target to preprocess a source file
+src/builtins.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/msh.dir/build.make CMakeFiles/msh.dir/src/builtins.c.i
+.PHONY : src/builtins.c.i
+
+src/builtins.s: src/builtins.c.s
+.PHONY : src/builtins.s
+
+# target to generate assembly for a file
+src/builtins.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/msh.dir/build.make CMakeFiles/msh.dir/src/builtins.c.s
+.PHONY : src/builtins.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -152,6 +176,30 @@ src/main.s: src/main.c.s
 src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/msh.dir/build.make CMakeFiles/msh.dir/src/main.c.s
 .PHONY : src/main.c.s
+
+src/parser.o: src/parser.c.o
+.PHONY : src/parser.o
+
+# target to build an object file
+src/parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/msh.dir/build.make CMakeFiles/msh.dir/src/parser.c.o
+.PHONY : src/parser.c.o
+
+src/parser.i: src/parser.c.i
+.PHONY : src/parser.i
+
+# target to preprocess a source file
+src/parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/msh.dir/build.make CMakeFiles/msh.dir/src/parser.c.i
+.PHONY : src/parser.c.i
+
+src/parser.s: src/parser.c.s
+.PHONY : src/parser.s
+
+# target to generate assembly for a file
+src/parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/msh.dir/build.make CMakeFiles/msh.dir/src/parser.c.s
+.PHONY : src/parser.c.s
 
 src/path_utils.o: src/path_utils.c.o
 .PHONY : src/path_utils.o
@@ -186,9 +234,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... msh"
+	@echo "... src/builtins.o"
+	@echo "... src/builtins.i"
+	@echo "... src/builtins.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/parser.o"
+	@echo "... src/parser.i"
+	@echo "... src/parser.s"
 	@echo "... src/path_utils.o"
 	@echo "... src/path_utils.i"
 	@echo "... src/path_utils.s"

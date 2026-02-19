@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
+project(msh)
 
-project(msh VERSION 1.0)
-
-include_directories(include)
+set(CMAKE_C_STANDARD 99)
 
 add_executable(msh
     src/main.c 
+    src/parser.c 
+    src/builtins.c
     src/path_utils.c
 )

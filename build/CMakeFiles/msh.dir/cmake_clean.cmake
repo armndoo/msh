@@ -1,7 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/msh.dir/link.d"
+  "CMakeFiles/msh.dir/src/builtins.c.o"
+  "CMakeFiles/msh.dir/src/builtins.c.o.d"
   "CMakeFiles/msh.dir/src/main.c.o"
   "CMakeFiles/msh.dir/src/main.c.o.d"
+  "CMakeFiles/msh.dir/src/parser.c.o"
+  "CMakeFiles/msh.dir/src/parser.c.o.d"
   "CMakeFiles/msh.dir/src/path_utils.c.o"
   "CMakeFiles/msh.dir/src/path_utils.c.o.d"
   "msh"
