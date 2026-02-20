@@ -4,14 +4,19 @@
 #include <stdio.h>
 
 char** parse_input(char* str) {
+  
   char* str_tokenized;
   char* delim=" \t\n\r";
   char* w_ptr=str;
+  char** argv;
+
   int num_words = 0;
   int in_word = 0;
   int i = 0;
-  
-  for(int i = 0; str[i] != '\0'; i++) {
+
+  if(!w_ptr) return NULL;
+
+  for(i = 0; str[i] != '\0'; i++) {
     if(!isspace(str[i])) {
       if(!in_word) {
         num_words++;
@@ -21,9 +26,12 @@ char** parse_input(char* str) {
       in_word = 0;
     }
   }
-
-
-  char** argv = malloc((num_words +2) * sizeof(char*));
+  i = 0;
+  if(num_words == 0) {
+     argv = malloc(sizeof(char*));
+  } else {
+      argv = malloc((num_words +2) * sizeof(char*));
+  }
   str_tokenized = strsep(&w_ptr,delim);
 
   while(str_tokenized != NULL) {
@@ -36,3 +44,4 @@ char** parse_input(char* str) {
   argv[i] = NULL;
   return argv;
 }
+

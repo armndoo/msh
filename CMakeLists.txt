@@ -10,3 +10,4 @@ add_executable(msh
     src/builtins.c
     src/path_utils.c
 )
+target_include_directories(msh PUBLIC include)

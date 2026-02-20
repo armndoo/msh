@@ -4,31 +4,39 @@
 #include <string.h>
 #include <stdlib.h>
 #include "path_utils.h"
+#include "parser.h"
+
 
 int exec_echo(char* str) {
-  if(!strcmp(str, "echo")) {
-    printf("\n");
+  if(!strcmp(str, "\n")) {
+    printf("%s \n", str);
     return 1;
-  }
-  if(!strncmp(str, "echo ", sizeof("echo ")-1)) {
-    printf("%s \n", str+5);
+  } else if(!strcmp(str,"/n")) {
+    printf("/n");
     return 1;
-
+  } else {
+    printf("%s \n",str);
+    return 1;
   }
   return 0;
 }
 
-int exec_type(char* command) {
+int exec_type(char** argv) {
   int found = 0;
   char* builtins[] = {"cd","type","echo","exit","pwd",NULL};
-  char* after_command = command+5;
+  char* after_command = argv[1];
   char* path_command = which(after_command);
-  if(!strcmp(command, "type")) return 1;
-  if(!strncmp(command,"type ", sizeof("type ") -1 )) {
+  if (argv[1] == NULL) {
+     printf("type: missing operand\n"); return 1;
+  }
+  if(strcmp(argv[0], "type")) {
+    return 1;
+  }
+  else {
     for(int i = 0; builtins[i] != NULL; i++){
-      if(!strcmp(command+5, builtins[i])) {
+      if(!strcmp(argv[1], builtins[i])) {
         found = 1;
-        printf("%s is a builtin command", command+5);
+        printf("%s is a builtin command", argv[1]); 
         return 1;
       } 
       if(path_command) {
@@ -38,9 +46,29 @@ int exec_type(char* command) {
       }
     }
     if(!found) {
-      printf("%s: command not found",command+5);      
+      printf("%s: command not found",argv[1]);      
       return 1;
     }
+  }
+  return 0;
+}
+
+int exec_exit() {
+  exit(1);
+}
+
+int dispatcher(char** argv) {
+   if(!strcmp(argv[0],"echo")){
+     exec_echo(argv[1]);
+     return 1;
+  }
+  if(!strcmp(argv[0],"type")){
+       exec_type(argv);
+       return 1;
+  }
+  if(!strcmp(argv[0],"exit")) {
+    exec_exit();
+    return 1;
   }
   return 0;
 }
